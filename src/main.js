@@ -12,12 +12,15 @@ import fastClick from 'fastclick'
 
 // 导入iconfont
 import 'styles/iconfont.css'
+// 导入vue-awesome-swiper
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
 
 Vue.config.productionTip = false
 
 // 将fastclick绑定到body上
 fastClick.attach(document.body)
-
+Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 
 /* eslint-disable no-new */
 new Vue({
