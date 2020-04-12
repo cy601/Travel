@@ -110,6 +110,10 @@ export default {
 // // 宽高比为2：1
 // overflow: hidden;
 // }
+.icons {
+  margin-top: 0.1rem;
+}
+
 .icon {
   float: left;
   width: 25%;
@@ -141,8 +145,7 @@ export default {
   height: 0.44rem;
   line-height: 0.44rem;
   color: $darkTextColor;
-  text-align: center
+  text-align: center;
   ellipsis();
-  
 }
 </style>
