@@ -1,6 +1,9 @@
 <template>
   <div class="icons">
-    <swiper ref="mySwiper">
+    <swiper
+      ref="mySwiper"
+      :options="swiperOptions"
+    >
       <swiper-slide
         v-for="(page,index) in pages"
         :key="index"
@@ -25,62 +28,22 @@
 
 <script>
 export default {
+ 
   name: 'HomeIcons',
+  props: {
+    list: Array
+  },
   data() {
     return {
-      iconList: [
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          desc: '景点门票'
-        },
-        {
-          id: '0002',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-          desc: '潮州必游'
-        },
-        {
-          id: '0003',
-          imgUrl: "http://img1.qunarzz.com/piao/fusion/1803/fa/2548667cb6e902.png",
-          desc: '紫莲度假村'
-        },
-        {
-          id: '0004',
-          imgUrl: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png",
-          desc: '自然风光'
-        },
-        {
-          id: '0005',
-          imgUrl: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/bda58ffc3016edad84e656e8a94b0321.png",
-          desc: '广州融创'
-        },
-        {
-          id: '0006',
-          imgUrl: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/f85ce21492e4f7896498dc70dc43f8b3.png",
-          desc: '绿岛山庄'
-        },
-        {
-          id: '0007',
-          imgUrl: "http://img1.qunarzz.com/piao/fusion/1803/b8/c5dcdb58deec2402.png",
-          desc: '凤翔峡'
-        },
-        {
-          id: '0008',
-          imgUrl: "http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png",
-          desc: '青岛怪臼'
-        },
-        {
-          id: '0009',
-          imgUrl: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png",
-          desc: '自然风光'
-        },
-      ]
+      swiperOptions: {
+        autoplay: false
+      }
     }
   },
   computed: {
     pages() {
       const pages = []
-      this.iconList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []

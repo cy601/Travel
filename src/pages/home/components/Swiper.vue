@@ -1,11 +1,13 @@
 <template>
   <div class="wrapper">
+    <!-- v-if 在list中有数据才开始渲染swiper -->
     <swiper
       ref="mySwiper"
+      v-if="showSwiper"
       :options="swiperOptions"
     >
       <swiper-slide
-        v-for="item of swiperList"
+        v-for="item of list"
         :key="item.id"
       >
         <img
@@ -27,23 +29,20 @@
 <script>
 export default {
   name: 'HomeSwiper',
+  props: {
+    list: Array
+  },
   data() {
     return {
       swiperOptions: {
         pagination: '.swiper-pagination',
-        loop:true
-
+        loop: true
       },
-      swiperList: [
-        {
-          id: '0001',
-          imgUrl: '//source.qunarzz.com/site/images/wns/20200331_qunar_dujia_750x192_gonggao.jpg'
-        },
-        {
-          id: '0002',
-          imgUrl: '//source.qunarzz.com/site/images/wns/20200408_qunar_dujia_banner_750x192_5.jpg'
-        },
-      ]
+    }
+  },
+  computed: {
+    showSwiper() {
+      return this.list.length
     }
   },
   methods: {

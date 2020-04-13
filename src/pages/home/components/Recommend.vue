@@ -5,7 +5,7 @@
       <li
         class="item
         border-bottom"
-        v-for="(item) in recommendList"
+        v-for="(item) in list"
         :key="item.id"
       >
 
@@ -32,28 +32,12 @@ export default {
   name: 'HomeRecommend',
   data() {
     return {
-      recommendList: [
-        {
-          id: '0001',
-          imgUrl: "http://img1.qunarzz.com/sight/p0/201403/20/ead49b1d47058634f71d20796ba131e9.jpg_200x200_6f52f864.jpg",
-          title: '青岚怪臼谷',
-          desc: '这里特别受欢迎哟!'
-        },
-        {
-          id: '0002',
-          imgUrl: "http://img1.qunarzz.com/sight/p0/201403/20/ead49b1d47058634f71d20796ba131e9.jpg_200x200_6f52f864.jpg",
-          title: '青岚怪臼谷',
-          desc: '这里特别受欢迎哟!'
-        },
-        {
-          id: '0003',
-          imgUrl: "http://img1.qunarzz.com/sight/p0/201403/20/ead49b1d47058634f71d20796ba131e9.jpg_200x200_6f52f864.jpg",
-          title: '青岚怪臼谷',
-          desc: '这里特别受欢迎哟!'
-        },
-      ]
+
     }
   },
+  props: {
+    list: Array
+  }
 }
 </script>
 
@@ -64,7 +48,7 @@ export default {
   line-height: 0.8rem;
   background: #eee;
   text-indent: 0.2rem;
-   margin-top: 0.2rem;
+  margin-top: 0.2rem;
 }
 
 .title {

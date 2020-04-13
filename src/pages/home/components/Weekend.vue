@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="recommend-title">周末去哪儿</div>
+    <div class="title">周末去哪儿</div>
     <ul>
       <li
         class="item
         border-bottom"
-        v-for="(item) in recommendList"
+        v-for="(item) in list"
         :key="item.id"
       >
         <div class="item-img-wrapper">
@@ -30,28 +30,31 @@
 <script>
 export default {
   name: 'HomeWeekend',
+  props: {
+    list: Array
+  },
   data() {
     return {
-      recommendList: [
-        {
-          id: '0001',
-          imgUrl: "http://img1.qunarzz.com/sight/source/1811/b8/5d599bbdcf8b57.jpg_r_640x214_2ee055e3.jpg",
-          title: '浮在海上的绿洲',
-          desc: '南国滨海之城，避寒胜地，有暖暖的阳光，海风习习，吃着海鲜逛逛老街多惬意啊'
-        },
-        {
-          id: '0002',
-          imgUrl: "http://img1.qunarzz.com/sight/source/1811/b8/5d599bbdcf8b57.jpg_r_640x214_2ee055e3.jpg",
-          title: '浮在海上的绿洲',
-          desc: '南国滨海之城，避寒胜地，有暖暖的阳光，海风习习，吃着海鲜逛逛老街多惬意啊'
-        },
-        {
-          id: '0003',
-          imgUrl: "http://img1.qunarzz.com/sight/source/1811/b8/5d599bbdcf8b57.jpg_r_640x214_2ee055e3.jpg",
-          title: '浮在海上的绿洲',
-          desc: '这里特别受欢迎哟!'
-        },
-      ]
+      // recommendList: [
+      //   {
+      //     id: '0001',
+      //     imgUrl: "http://img1.qunarzz.com/sight/source/1811/b8/5d599bbdcf8b57.jpg_r_640x214_2ee055e3.jpg",
+      //     title: '浮在海上的绿洲',
+      //     desc: '南国滨海之城，避寒胜地，有暖暖的阳光，海风习习，吃着海鲜逛逛老街多惬意啊'
+      //   },
+      //   {
+      //     id: '0002',
+      //     imgUrl: "http://img1.qunarzz.com/sight/source/1811/b8/5d599bbdcf8b57.jpg_r_640x214_2ee055e3.jpg",
+      //     title: '浮在海上的绿洲',
+      //     desc: '南国滨海之城，避寒胜地，有暖暖的阳光，海风习习，吃着海鲜逛逛老街多惬意啊'
+      //   },
+      //   {
+      //     id: '0003',
+      //     imgUrl: "http://img1.qunarzz.com/sight/source/1811/b8/5d599bbdcf8b57.jpg_r_640x214_2ee055e3.jpg",
+      //     title: '浮在海上的绿洲',
+      //     desc: '这里特别受欢迎哟!'
+      //   },
+      // ]
     }
   },
 }
@@ -60,15 +63,7 @@ export default {
 <style lang='stylus' scoped>
 @import '~styles/mixins.styl';
 
-.recommend-title {
-  line-height: 0.8rem;
-  background: #eee;
-  text-indent: 0.2rem;
-  margin-top: 0.2rem;
-}
-
 .title {
-  margin-top: 0.2rem;
   line-height: 0.8rem;
   background: #eeeeee;
   text-indent: 0.2rem;
@@ -77,7 +72,7 @@ export default {
 .item-img-wrapper {
   height: 0;
   overflow: hidden;
-  padding-bottom: 33.9%;
+  padding-bottom: 37.09%;
 }
 
 .item-info {
