@@ -70,7 +70,7 @@ export default {
             this.$emit('change', this.letters[index])
             console.log(index);
           }
-        }, 16);
+        }, 8);
 
 
 

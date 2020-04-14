@@ -7,8 +7,8 @@ import router from './router'
 import 'styles/reset.css'
 import 'styles/border.css'
 
-// 导入fastclick
-import fastClick from 'fastclick'
+// // 导入fastclick
+// import fastClick from 'fastclick'
 
 
 // 导入iconfont
@@ -22,8 +22,8 @@ import 'swiper/dist/css/swiper.css'
 
 Vue.config.productionTip = false
 
-// 将fastclick绑定到body上
-fastClick.attach(document.body)
+// // 将fastclick绑定到body上
+// fastClick.attach(document.body)
 Vue.use(VueAwesomeSwiper)
 
 /* eslint-disable no-new */
