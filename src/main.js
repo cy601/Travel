@@ -15,8 +15,8 @@ import 'styles/border.css'
 import 'styles/iconfont.css'
 // 导入vue-awesome-swiper
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-import store from './store'
 import 'swiper/dist/css/swiper.css'
+import store from './store'
 
 
 

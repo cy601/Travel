@@ -36,7 +36,9 @@ export default {
     return {
       swiperOptions: {
         pagination: '.swiper-pagination',
-        loop: true
+        loop: true,
+        // observer: true,
+        // observerParents: true
       },
     }
   },
