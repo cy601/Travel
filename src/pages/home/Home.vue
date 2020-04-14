@@ -1,6 +1,6 @@
 <template>
   <div>
-    <home-header ></home-header>
+    <home-header></home-header>
     <home-swiper :list='swiperList'></home-swiper>
     <home-icons :list='iconList'></home-icons>
     <home-recommend :list='recommendList'></home-recommend>
@@ -16,6 +16,7 @@ import HomeIcons from './components/Icons'
 import HomeRecommend from './components/Recommend'
 import HomeWeekend from './components/Weekend'
 import axios from 'axios'
+import { mapState } from 'vuex'
 export default {
   name: 'Home',
   components: {
@@ -28,17 +29,20 @@ export default {
 
   data() {
     return {
- 
+      lastCity:'',
       swiperList: [],
       iconList: [],
       recommendList: [],
       weekendList: []
     }
   },
+  computed: {
+    ...mapState(['city'])
+  },
   methods: {
     getHomeInfo() {
       // axios.get('/static/mock/index.json')
-      axios.get('/api/index.json')
+      axios.get('/api/index.json?city=' + this.city)
         .then(this.getHomeInfoSucc)
         .catch(err => {
           console.error(err);
@@ -49,7 +53,7 @@ export default {
       console.log(res);
       if (res.ret && res.data) {
         const data = res.data
-        
+
         this.swiperList = data.swiperList
         this.iconList = data.iconList
         this.recommendList = data.recommendList
@@ -58,8 +62,22 @@ export default {
     }
   },
   mounted() {
+    this.lastCity = this.city
+    console.log('mouted');
+
     this.getHomeInfo()
   },
+
+
+  // 判断城市是否有改动，若有，则重新发送一次ajax请求
+  activated() {
+    if (this.lastCity !== this.city) {
+      this.lastCity=this.city
+      this.getHomeInfo()
+    }
+    console.log('activated');
+
+  }
 }
 </script>
 
