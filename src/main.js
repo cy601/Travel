@@ -16,6 +16,8 @@ import 'styles/iconfont.css'
 // 导入vue-awesome-swiper
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
+//引入babel-polyfill 解决低版本浏览器不兼容ES6的问题
+import 'babel-polyfill'
 import store from './store'
 
 

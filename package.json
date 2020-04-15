@@ -5,12 +5,13 @@
   "author": "cy601@vip.qq.com <43111080+cy601@users.noreply.github.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --host 0.0.0.0 --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "build": "node build/build.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "babel-polyfill": "^6.26.0",
     "better-scroll": "^1.15.2",
     "reset.css": "^2.0.2",
     "stylus": "^0.54.7",
