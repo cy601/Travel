@@ -38,7 +38,7 @@ export default {
     window.addEventListener('scroll', this.handleScroll)
   },
   deactivated() {
-window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
     handleScroll() {
@@ -86,6 +86,7 @@ window.removeEventListener('scroll', this.handleScroll)
 }
 
 .header-fixed {
+  z-index: 2;
   top: 0;
   left: 0;
   right: 0;
